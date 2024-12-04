@@ -90,7 +90,7 @@ async function dispalyalbum() {
   for (let index = 0; index < array.length; index++) {
     const e = array[index];
 
-    if (e.href.includes("/song")) {
+    if (e.href.includes("/song") && !e.href.includes(".htaccess")) {
       let folder = (e.href.split("/").slice(-2)[0])
       // get meta data of folder
       let a = await fetch(`/song/${folder}/info.json`);
